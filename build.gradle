@@ -26,10 +26,6 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-email', version: '1.5'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.6'
-}
-
 jar {
     manifest {
         attributes 'Main-Class': 'empresario.hello.MainServer'
