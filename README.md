@@ -18,6 +18,16 @@ As entregas estão descritas nas issues deste repositórios.
 
 ## Resultados
 
+|   | Entregas                             | Resultado          |
+|---|--------------------------------------|--------------------|
+| 1 | Deploy da Aplicação                  |         OK         |
+| 2 | Prover ambeinte de testes local      |         OK         |
+| 3 | Integração com o Jenkins             | Em desenvolvimento |
+| 4 | Integração com SonarQube             | Em desenvolvimento |
+| 5 | Dividir ambientes: Dev, Stage e Prod | Em desenvolvimento |
+| 6 | Integração com o Gerrit              | Em desenvolvimento |
+
+
 1. O deploy da aplicação Antenas foi implementado e pode ser acessado em https://antenas-integracao.herokuapp.com/
 
 2. O Vagrant já está disponível para uso. Basta instalar o Vagrant e rodar o comando abaixo na raíz do projeto.
@@ -27,3 +37,9 @@ vagrant up
 
 
 3. Em desenvolvimento.
+
+4. Em desenvolvimento.
+
+5. Em desenvolvimento.
+
+6. Em desenvolvimento.
