@@ -3,7 +3,7 @@
 Este repositório é utilizado para mostrar as entregas para a Disciplina de Projeto de Bando de Dados. 
 
 ### Alunos
-- Bruna Cristiana Lopes
+- Bruna Cristina Lopes
 - Cristiano Gregio
 - Kleber Rogério do Nascimento
 - Maria Giovana Silva Realino
