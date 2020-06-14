@@ -18,6 +18,16 @@ build:
     paths:
       - build/libs/*.jar
 
+pages:
+  stage: build
+  script:
+  - sudo nohup java -jar /home/gitlab-runnerbuild/build/libs/*.jar &
+  artifacts:
+    paths:
+      - build/libs/*.jar
+  only:
+  - master
+
 deploy:
   stage: build
   script:
