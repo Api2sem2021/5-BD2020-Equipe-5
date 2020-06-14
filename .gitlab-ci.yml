@@ -10,7 +10,6 @@ variables:
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
 
-
 build:
   stage: build
   script:
@@ -18,3 +17,11 @@ build:
   artifacts:
     paths:
       - build/libs/*.jar
+
+deploy:
+  stage: deploy
+  script:
+    - sudo nohup java -jar /home/gitlab-runnerbuild/build/libs/*.jar &
+
+after_script:
+  - echo "Feito"
