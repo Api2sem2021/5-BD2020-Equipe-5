@@ -19,7 +19,7 @@ build:
       - build/libs/*.jar
 
 deploy:
-  stage: deploy
+  stage: build
   script:
     - sudo nohup java -jar /home/gitlab-runnerbuild/build/libs/*.jar &
 
