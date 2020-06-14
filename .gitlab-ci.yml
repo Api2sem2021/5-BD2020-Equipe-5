@@ -1,8 +1,11 @@
 image: gradle:alpine
+services:
+  - docker:dind
 
 stages:
   - build
-  - test
+  - package
+  - deploy
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
@@ -11,27 +14,36 @@ before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
 
 build:
+  image: gradle:5.0-jdk8-alpine
   stage: build
   script:
-    gradle --build-cache assemble
+    - gradle build
   artifacts:
     paths:
       - build/libs/*.jar
-
-pages:
-  stage: build
+	  
+package:
+  stage: package
   script:
-  - sudo nohup java -jar /home/gitlab-runnerbuild/build/libs/*.jar &
-  artifacts:
-    paths:
-      - build/libs/*.jar
-  only:
-  - master
+    - docker build -t registry.gitlab.com/cristiano.gregio/antenas-integracao-master .
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-master
 
 deploy:
-  stage: build
+  stage: deploy
   script:
-    - sudo nohup java -jar /home/gitlab-runnerbuild/build/libs/*.jar &
+    - apk upgrade && apk update
+    - apk add openssh-client
+    - apk add sshpass
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master:latest && docker container rm master:latest || true"
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$STAGING_SERVER docker run --name master:latest -p 80:80 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+  environment:
+    name: staging
+    url: https://labprojbd.antenas.com
+  only:
+    - master
 
 after_script:
   - echo "Feito"
