@@ -13,27 +13,21 @@ Este repositório é utilizado para mostrar as entregas para a Disciplina de Pro
 
 ## Entregas
 
-As entregas estão descritas nas issues deste repositórios.
-
-## Resultados
 
 |   | Entregas                             | Resultado          |
 |---|--------------------------------------|--------------------|
 | 1 | Deploy da Aplicação                  |         OK         |
 | 2 | Utilização do Docker                 |         OK         |
 | 3 | Instalação do Mongo                  |         OK         |
-| 4 | Fornecer base de dados para testes   | Em desenvolvimento |
-| 5 | Dividir ambientes: Dev, Stage e Prod | Em desenvolvimento |
-| 6 | Integração com Jenkins               | Em desenvolvimento |
+| 4 | Dividir ambientes: Dev, Stage e Prod | Em desenvolvimento |
+| 5 | Integração com Jenkins               | Em desenvolvimento |
+| 6 | Integração com Gerrit                | Em desenvolvimento |
+| 7 | Automoção do MongoDB                 | Em desenvolvimento |
 
 
 
-1. O deploy da aplicação Antenas foi implementado e pode ser acessado em: http://165.227.80.192:8081/
+O deploy da aplicação Antenas foi implementado e pode ser acessado em: http://165.227.80.192:8081/
 
-2. Dockerfile adicionado na raiz do projeto
+Board do Trello: https://trello.com/b/398kn2c3/lab-proj-banco-de-dados-antenas
 
-3. Instalação do Mongo feita via Dockerfile
 
-4. Em desenvolvimento.
-
-5. Em desenvolvimento.
