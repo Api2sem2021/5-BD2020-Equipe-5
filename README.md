@@ -20,20 +20,20 @@ As entregas estão descritas nas issues deste repositórios.
 |   | Entregas                             | Resultado          |
 |---|--------------------------------------|--------------------|
 | 1 | Deploy da Aplicação                  |         OK         |
-| 2 | Prover ambeinte de testes local      |         OK         |
-| 3 | Integração com o Jenkins             | Em desenvolvimento |
-| 4 | Integração com SonarQube             | Em desenvolvimento |
+| 2 | Utilização do Docker                 |         OK         |
+| 3 | Instalação do Mongo                  |         OK         |
+| 4 | Fornecer base de dados para testes   | Em desenvolvimento |
 | 5 | Dividir ambientes: Dev, Stage e Prod | Em desenvolvimento |
-| 6 | Integração com o Gerrit              | Em desenvolvimento |
+| 6 | Integração com Jenkins               | Em desenvolvimento |
 
 
-1. O deploy da aplicação Antenas foi implementado e pode ser acessado em  
 
+1. O deploy da aplicação Antenas foi implementado e pode ser acessado em: http://165.227.80.192:8081/
 
-3. Em desenvolvimento.
+2. Dockerfile adicionado na raiz do projeto
+
+3. Instalação do Mongo feita via Dockerfile
 
 4. Em desenvolvimento.
 
 5. Em desenvolvimento.
-
-6. Em desenvolvimento.
