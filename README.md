@@ -27,7 +27,7 @@ As entregas estão descritas nas issues deste repositórios.
 | 6 | Integração com o Gerrit              | Em desenvolvimento |
 
 
-1. O deploy da aplicação Antenas foi implementado e pode ser acessado em 
+1. O deploy da aplicação Antenas foi implementado e pode ser acessado em  
 
 
 3. Em desenvolvimento.
