@@ -37,13 +37,10 @@ deploy:
     - apk add sshpass
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-master
-    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master:latest && docker container rm master:latest || true"
-    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name master:latest -p 8081:8081 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master && docker container rm master || true"
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name master -p 8081:8081 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
   environment:
     name: staging
     url: https://labprojbd.antenas.com
   only:
     - master
-
-after_script:
-  - echo "Feito"
