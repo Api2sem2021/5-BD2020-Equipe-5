@@ -20,8 +20,8 @@ Este repositório é utilizado para mostrar as entregas para a Disciplina de Pro
 | 2 | Utilização do Docker                 |         OK         |
 | 3 | Instalação do Mongo                  |         OK         |
 | 4 | Dividir ambientes: Dev, Stage e Prod | Em desenvolvimento |
-| 5 | Integração com Jenkins               | Em desenvolvimento |
-| 6 | Integração com Gerrit                | Em desenvolvimento |
+| 5 | Integração com Jenkins               |         OK         |
+| 6 | Integração com Gerrit                |         OK         |
 | 7 | Automoção do MongoDB                 | Em desenvolvimento |
 
 
