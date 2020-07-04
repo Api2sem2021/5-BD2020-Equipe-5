@@ -20,7 +20,7 @@ Este repositório é utilizado para mostrar as entregas para a disciplina de Lab
 - O Antenas tem por objetivo aproximar o aluno do mercado de trabalho, uma vez que cada projeto não é apenas didático, mas destinado a um cliente real.
 - A imagem abaixo ilustra o que como é fluxo e o papel de cada de profissional em cada etapa dentro da plataforma CADI.
 ```
-![alt text](https://gitlab.com/cristiano.gregio/antenas-integracao-master/imagens/ETAPAS_ANTENAS.png "Fluxo de processos do CADI")
+![alt text](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/blob/master/imagens/ETAPAS_ANTENAS.png "Fluxo de processos do CADI")
 ```
 
 ## Entregas
