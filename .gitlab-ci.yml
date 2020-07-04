@@ -5,7 +5,8 @@ services:
 stages:
   - build
   - package
-  - deploy
+  - deploy_master
+  - deploy_dev
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
@@ -29,8 +30,8 @@ package:
     - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u gitlab-ci-token --password-stdin
     - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-master
 
-deploy:
-  stage: deploy
+deploy_master:
+  stage: deploy_master
   script:
     - apk upgrade && apk update
     - apk add openssh-client
@@ -40,7 +41,28 @@ deploy:
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master && docker container rm master || true"
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name master -p 8081:8081 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
   environment:
-    name: staging
+    name: prod
     url: http://localhost:8081
   only:
+    - master
+  except:
+    - dev
+
+    
+deploy_dev:
+  stage: deploy_dev
+  script:
+    - apk upgrade && apk update
+    - apk add openssh-client
+    - apk add sshpass
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master && docker container rm dev || true"
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name dev -p 8082:8082 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+  environment:
+    name: dev
+    url: http://localhost:8082
+  only:
+    - dev
+  except:
     - master
