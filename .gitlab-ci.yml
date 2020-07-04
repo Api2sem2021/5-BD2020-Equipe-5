@@ -41,10 +41,13 @@ deploy_master:
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master && docker container rm master || true"
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name master -p 8081:8081 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
   environment:
-    name: staging
+    name: prod
     url: http://localhost:8081
   only:
     - master
+  except:
+    - dev
+
     
 deploy_dev:
   stage: deploy_dev
@@ -57,7 +60,9 @@ deploy_dev:
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master && docker container rm dev || true"
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name dev -p 8082:8082 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
   environment:
-    name: staging
+    name: dev
     url: http://localhost:8082
   only:
     - dev
+  except:
+    - master
