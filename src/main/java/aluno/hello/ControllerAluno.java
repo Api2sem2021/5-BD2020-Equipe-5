@@ -109,7 +109,7 @@ public class ControllerAluno {
 				found.replace("ativo", true);
 				model.updateAluno(found);
 				if (!found.isEmpty()) {
-					response.redirect("/aluno"); //8081
+					response.redirect("/aluno"); 
 				}
 
 				return null;

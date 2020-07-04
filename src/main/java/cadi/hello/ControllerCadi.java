@@ -93,7 +93,7 @@ public class ControllerCadi {
 				String email = new String(Base64.getDecoder().decode ( request.params("email")  )) ;
 				Document found = model.ativarCadi(email);
 				if (!found.isEmpty()) {
-					response.redirect("http://localhost:8081/cadi/index.html");
+					response.redirect("http://localhost:8082/cadi/index.html");
 				}
 				return null;
 			}
