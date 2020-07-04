@@ -5,7 +5,8 @@ services:
 stages:
   - build
   - package
-  - deploy
+  - deploy_master
+  - deploy_dev
 
 variables:
   GRADLE_OPTS: "-Dorg.gradle.daemon=false"
@@ -29,7 +30,7 @@ package:
     - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u gitlab-ci-token --password-stdin
     - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-master
 
-deploy:
+deploy_master:
   stage: deploy
   script:
     - apk upgrade && apk update
@@ -45,7 +46,7 @@ deploy:
   only:
     - master
     
-deploy:
+deploy_dev:
   stage: deploy
   script:
     - apk upgrade && apk update
