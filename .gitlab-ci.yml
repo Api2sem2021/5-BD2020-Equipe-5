@@ -31,7 +31,7 @@ package:
     - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-master
 
 deploy_master:
-  stage: deploy
+  stage: deploy_master
   script:
     - apk upgrade && apk update
     - apk add openssh-client
@@ -47,7 +47,7 @@ deploy_master:
     - master
     
 deploy_dev:
-  stage: deploy
+  stage: deploy_dev
   script:
     - apk upgrade && apk update
     - apk add openssh-client
