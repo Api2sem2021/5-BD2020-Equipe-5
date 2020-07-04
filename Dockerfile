@@ -15,7 +15,7 @@ RUN apt-get update
 RUN apt-get install -y ${MONGO_PACKAGE}=$MONGO_VERSION
 VOLUME ["/data/db"]
 WORKDIR /data
-EXPOSE 27017
+EXPOSE 27017 
 CMD ["mongod", "--smallfiles", "-d", "app"]
 
 FROM openjdk:8-jdk-alpine
