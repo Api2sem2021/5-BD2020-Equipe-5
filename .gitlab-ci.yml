@@ -70,11 +70,8 @@ deploy_dev:
     - apk upgrade && apk update
     - apk add openssh-client
     - apk add sshpass
-    - echo $SERVER_PASSWORD
-    - echo $SERVER_USER
-    - echo $SERVER
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-master:dev
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-master
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop dev && docker container rm dev || true"
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name dev -p 8082:8082 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-dev
   environment:
