@@ -38,9 +38,9 @@ package_master:
 package_dev:
   stage: package_dev
   script:
-    - docker build -t registry.gitlab.com/cristiano.gregio/antenas-integracao-dev .
+    - docker build -t registry.gitlab.com/cristiano.gregio/antenas-integracao-master .
     - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u gitlab-ci-token --password-stdin
-    - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-dev
+    - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-master
   only:
     - dev
   except:
