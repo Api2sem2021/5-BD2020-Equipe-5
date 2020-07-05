@@ -21,9 +21,9 @@ before_script:
 runmongo:
   stage: runmongo
   script:
-    - apt-get update
-    - apt-get install -y gnupg
-    - apt-get install -y mongodb-org
+    - apt update
+    - apt install -y gnupg
+    - apt install -y mongodb-org
     - systemctl start mongod
 
 build:
