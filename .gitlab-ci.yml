@@ -26,7 +26,7 @@ runmongo:
     - apk upgrade && apk update
     - apk add gnupg
     - apk add mongodb=3.4.4-r0
-    - systemctl start mongod
+    - docker run -p 27017:27017 --name mongo -d app
 
 build:
   image: gradle:5.0-jdk8-alpine
