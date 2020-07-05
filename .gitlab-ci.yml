@@ -23,7 +23,7 @@ runmongo:
   script:
     - apk upgrade && apk update
     - apk add gnupg
-    - apk add mongodb-org
+    - apk add mongodb
     - systemctl start mongod
 
 build:
