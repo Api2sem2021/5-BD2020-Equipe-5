@@ -4,7 +4,8 @@ services:
 
 stages:
   - build
-  - package
+  - package_master
+  - package_dev
   - deploy_master
   - deploy_dev
 
@@ -23,12 +24,27 @@ build:
     paths:
       - build/libs/*.jar
 
-package:
-  stage: package
+package_master:
+  stage: package_master
   script:
     - docker build -t registry.gitlab.com/cristiano.gregio/antenas-integracao-master .
     - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u gitlab-ci-token --password-stdin
     - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+  only:
+    - master
+  except:
+    - dev
+
+package_dev:
+  stage: package_dev
+  script:
+    - docker build -t registry.gitlab.com/cristiano.gregio/antenas-integracao-dev .
+    - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u gitlab-ci-token --password-stdin
+    - docker push registry.gitlab.com/cristiano.gregio/antenas-integracao-dev
+  only:
+    - dev
+  except:
+    - master
 
 deploy_master:
   stage: deploy_master
@@ -48,7 +64,6 @@ deploy_master:
   except:
     - dev
 
-    
 deploy_dev:
   stage: deploy_dev
   script:
@@ -56,9 +71,9 @@ deploy_dev:
     - apk add openssh-client
     - apk add sshpass
     - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-master
-    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop master && docker container rm dev || true"
-    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name dev -p 8082:8082 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-master
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker pull registry.gitlab.com/cristiano.gregio/antenas-integracao-dev
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER "docker container stop dev && docker container rm dev || true"
+    - sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER docker run --name dev -p 8082:8082 -d registry.gitlab.com/cristiano.gregio/antenas-integracao-dev
   environment:
     name: dev
     url: http://localhost:8082
