@@ -22,8 +22,8 @@ runmongo:
   stage: runmongo
   script:
     - apk upgrade && apk update
-    - apt add -y gnupg
-    - apt add -y mongodb-org
+    - apk add -y gnupg
+    - apk add -y mongodb-org
     - systemctl start mongod
 
 build:
