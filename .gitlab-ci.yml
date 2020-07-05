@@ -21,7 +21,8 @@ before_script:
 runmongo:
   stage: runmongo
   script:
-    - docker rm -f mongo
+    - docker container stop mongo
+    - docker container rm -f mongo
     - docker pull mongo
     - docker run -p 27017:27017 --name mongo -d mongo -e MONGODB_DATABASE="app"
 
