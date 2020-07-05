@@ -21,12 +21,8 @@ before_script:
 runmongo:
   stage: runmongo
   script:
-    - echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories
-    - echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/community' >> /etc/apk/repositories
-    - apk upgrade && apk update
-    - apk add gnupg
-    - apk add mongodb=3.4.4-r0
-    - docker run -p 27017:27017 --name mongo -d app
+    - docker pull mongo
+    - docker run -p 27017:27017 --name mongo -d mongo
 
 build:
   image: gradle:5.0-jdk8-alpine
