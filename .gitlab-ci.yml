@@ -21,9 +21,11 @@ before_script:
 runmongo:
   stage: runmongo
   script:
+    - echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories
+    - ech 'http://dl-cdn.alpinelinux.org/alpine/v3.6/community' >> /etc/apk/repositories
     - apk upgrade && apk update
     - apk add gnupg
-    - apk add mongodb
+    - apk add mongodb=3.4.4-r0
     - systemctl start mongod
 
 build:
