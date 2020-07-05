@@ -100,7 +100,7 @@ public class ControllerProfessor {
 				String email = new String(Base64.getDecoder().decode ( request.params("email")  )) ;
 				Document found = model.ativarProfessor(email);
 				if (!found.isEmpty()) {
-					response.redirect("http://localhost:8081/professor/index.html");
+					response.redirect("http://localhost:8083/professor/index.html");
 				}
 				return null;
 			}
