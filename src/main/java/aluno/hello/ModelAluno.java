@@ -17,7 +17,7 @@ import com.mongodb.client.model.FindOneAndUpdateOptions;
 
 public class ModelAluno {
 
-	MongoClient mongoClient = new MongoClient( "127.0.0.1" );
+	MongoClient mongoClient = new MongoClient( "165.227.80.192" );
 	MongoDatabase db = mongoClient.getDatabase("app");
 
 	public String search(String chave) {
