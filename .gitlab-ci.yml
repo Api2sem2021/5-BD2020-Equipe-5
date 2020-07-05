@@ -24,7 +24,7 @@ runmongo:
     - docker container stop mongo || true
     - docker container rm -f mongo || true
     - docker pull mongo
-    - docker run -p 27017:27017 --name mongo -d mongo -e MONGODB_DATABASE="app"
+    - docker run -p 27017:27017 --name mongo -d mongo
 
 build:
   image: gradle:5.0-jdk8-alpine
