@@ -21,7 +21,7 @@ before_script:
 runmongo:
   stage: runmongo
   script:
-    - apk upgrade && apk updat
+    - apk upgrade && apk update
     - apt add -y gnupg
     - apt add -y mongodb-org
     - systemctl start mongod
