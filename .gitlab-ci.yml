@@ -26,7 +26,7 @@ runmongo_master:
     - docker container stop mongo_master || true
     - docker container rm -f mongo_master || true
     - docker pull mongo
-    - docker run -p 27017:27017 --name mongo_master -d mongo_master
+    - docker run -p 27017:27017 --name mongo_master -d mongo
   only:
     - master
   except:
@@ -39,7 +39,7 @@ runmongo_dev:
     - docker container stop mongo_dev || true
     - docker container rm -f mongo_dev || true
     - docker pull mongo
-    - docker run -p 27017:27019 --name mongo_dev -d mongo_dev
+    - docker run -p 27017:27019 --name mongo_dev -d mongo
   only:
     - dev
   except:
@@ -52,7 +52,7 @@ runmongo_staging:
     - docker container stop mongo_staging || true
     - docker container rm -f mongo_staging || true
     - docker pull mongo
-    - docker run -p 27017:27018 --name mongo_staging -d mongo_staging
+    - docker run -p 27017:27018 --name mongo_staging -d mongo
   only:
     - staging
   except:
