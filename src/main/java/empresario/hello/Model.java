@@ -15,7 +15,7 @@ public class Model{
 
 
 	MongoClient mongoClient = new MongoClient( "165.227.80.192" );
-	MongoDatabase db = mongoClient.getDatabase("app");
+	MongoDatabase db = mongoClient.getDatabase("app_staging");
 
 	public void addProjeto(Document projeto) {
 		MongoCollection<Document> projetos = db.getCollection("projeto");

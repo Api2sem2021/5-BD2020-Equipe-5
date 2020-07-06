@@ -18,10 +18,10 @@ import com.mongodb.client.model.FindOneAndUpdateOptions;
 public class ModelAluno {
 
 	MongoClient mongoClient = new MongoClient( "165.227.80.192" );
-	MongoDatabase db = mongoClient.getDatabase("app");
+	MongoDatabase db = mongoClient.getDatabase("app_staging");
 
 	public String search(String chave) {
-		MongoDatabase db = mongoClient.getDatabase("app");
+		MongoDatabase db = mongoClient.getDatabase("app_staging");
 		MongoCollection<Document> projects = db.getCollection("projeto");
 		FindIterable<Document> found = projects.find(new Document("chave", chave));
 		String foundJson = StreamSupport.stream(found.spliterator(), false).map(Document::toJson)
