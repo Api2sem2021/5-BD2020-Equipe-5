@@ -52,7 +52,7 @@ runmongo_staging:
     - docker container stop mongo_staging || true
     - docker container rm -f mongo_staging || true
     - docker pull mongo
-    - docker run -p 27017:27018 --name mongo_staging -d mongo
+    - docker run -p 27018:27017 --name mongo_staging -d mongo
   only:
     - staging
   except:
