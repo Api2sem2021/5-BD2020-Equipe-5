@@ -29,14 +29,21 @@ O código-fonte da aplicação foi desenvolvido por outros alunos por meio de in
 |   | Entregas                             |                                  Resultado                                         |
 |---|--------------------------------------|------------------------------------------------------------------------------------|
 | 1 | Deploy da Aplicação                  |O **deploy da aplicação Antenas** pode ser acessado em: http://165.227.80.192:8081/ |
-| 2 | Utilização do Docker                 |Verificar o arquivo .gitlab-ci.yml                                                  |
-| 3 | Instalação do Mongo                  |Verificar o arquivo .gitlab-ci.yml                                                  |
-| 4 | Dividir ambientes: Dev, Stage e Prod |         OK                                                                         |
+| 2 | Utilização do Docker                 |Verificar o arquivo .gitlab-ci.yml onde a instalação do app é implementacação.      |
+| 3 | Instalação do Mongo                  |Verificar o arquivo .gitlab-ci.yml onde o mongo é instalado usando Docker.          |
+| 4 | Dividir ambientes: Dev, Stage e Prod |O projeto foi dividido em dev, staging e master(prod). Ver a Wiki para mais detalhes|
 | 5 | Integração com Jenkins               |O **Jenkins** da aplicação Antenas pode ser acessado em: http://165.227.80.192:8080/|
-| 6 | Integração com Gerrit                |O **Gerrit** da aplicação Antenas pode ser acessado em: http://165.227.80.192:8082/ |
-| 7 | Automoção do MongoDB                 |Verificar o arquivo .gitlab-ci.yml                                                  |
+| 6 | Automoção do MongoDB                 |Verificar o arquivo .gitlab-ci.yml. Conectar no banco e ver as tabelas populadas.   |
 
 
 - Nossas atividades são gerenciadas pelo **Trello**. Para detalhes, acesse no board: https://trello.com/b/398kn2c3/lab-proj-banco-de-dados-antenas
 
 - Para conhecer mais sobre nosso trabalho bem como as tecnologias empregadas, visite nossa [Wiki](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/wikis/Antenas)
+
+- Status dos **Pipelines** de cada ambiente (CI / CD):
+
+    Ambiente de Produção (MASTER) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
+
+    Ambiente de Desenvolvimento (DEV) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
+
+    Ambiente de Staging (STAGING) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/staging/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/staging)
