@@ -19,7 +19,7 @@ import com.mongodb.client.model.FindOneAndUpdateOptions;
 public class ModelCadi {
 
 //	mongoClient mongoClient = new mongoClient("app");
-	MongoClient mongoClient = new MongoClient( "165.227.80.192" );
+	MongoClient mongoClient = new MongoClient( "165.227.80.192:27018" );
 	MongoDatabase db = mongoClient.getDatabase("app_staging");
 
 	public String search(String chave, String valor) {
