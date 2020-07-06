@@ -39,7 +39,7 @@ runmongo_dev:
     - docker container stop mongo_dev || true
     - docker container rm -f mongo_dev || true
     - docker pull mongo
-    - docker run -p 27017:27019 --name mongo_dev -d mongo
+    - docker run -p 27019:27017 --name mongo_dev -d mongo
   only:
     - dev
   except:

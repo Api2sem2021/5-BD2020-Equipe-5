@@ -41,7 +41,7 @@ O código-fonte da aplicação foi desenvolvido por outros alunos por meio de in
 
 - Para conhecer mais sobre nosso trabalho bem como as tecnologias empregadas, visite nossa [Wiki](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/wikis/Antenas)
 
-- Status de CI / CD de cada ambiente:
+- Status dos **Pipelines** de cada ambiente (CI / CD):
 
     Ambiente de Produção (MASTER) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
 
