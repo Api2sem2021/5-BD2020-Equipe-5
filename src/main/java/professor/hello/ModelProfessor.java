@@ -15,8 +15,8 @@ import com.mongodb.client.model.FindOneAndUpdateOptions;
 
 public class ModelProfessor {
 
-	MongoClient mongoClient = new MongoClient( "127.0.0.1" );
-	MongoDatabase db = mongoClient.getDatabase("app");
+	MongoClient mongoClient = new MongoClient( "165.227.80.192:27019");
+	MongoDatabase db = mongoClient.getDatabase("app_dev");
 	
 	public ArrayList<Document> myProjects(Document email) {
 		MongoCollection<Document> projetos = db.getCollection("projeto");
