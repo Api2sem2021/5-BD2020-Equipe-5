@@ -41,10 +41,10 @@ O código-fonte da aplicação foi desenvolvido por outros alunos por meio de in
 
 - Para conhecer mais sobre nosso trabalho bem como as tecnologias empregadas, visite nossa [Wiki](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/wikis/Antenas)
 
-- CI / CD
+- Status de CI / CD de cada ambiente:
 
-    MASTER [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
+    Ambiente de Produção (MASTER) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
 
-    DEV [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
+    Ambiente de Desenvolvimento (DEV) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
 
-    STAGING [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/staging/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/staging)
+    Ambiente de Staging (STAGING) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/staging/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/staging)
