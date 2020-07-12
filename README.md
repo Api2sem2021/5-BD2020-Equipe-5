@@ -44,6 +44,6 @@ O código-fonte da aplicação foi desenvolvido por outros alunos por meio de in
 
     Ambiente de Produção (MASTER) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
 
-    Ambiente de Desenvolvimento (DEV) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/master/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/master)
+    Ambiente de Desenvolvimento (DEV) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/dev/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/dev)
 
     Ambiente de Staging (STAGING) [![pipeline status](https://gitlab.com/cristiano.gregio/antenas-integracao-master/badges/staging/pipeline.svg)](https://gitlab.com/cristiano.gregio/antenas-integracao-master/-/commits/staging)
