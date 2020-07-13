@@ -51,5 +51,5 @@ O código-fonte da aplicação foi desenvolvido por outros alunos por meio de in
 ## Video de apresentação
 
 <figure class="video_container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/RzECzv5cJ0U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe  src="https://www.youtube.com/embed/RzECzv5cJ0U" frameborder="0" allowfullscreen="true" ></iframe>
 </figure>
