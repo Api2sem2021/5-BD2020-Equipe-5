@@ -50,6 +50,6 @@ O código-fonte da aplicação foi desenvolvido por outros alunos por meio de in
     
 ## Video de apresentação
 
-<figure class="video_container">
-  <iframe  src="https://www.youtube.com/embed/RzECzv5cJ0U" frameborder="0" allowfullscreen="true" ></iframe>
+- Nossa video de apresentação: https://youtu.be/RzECzv5cJ0U
+
 </figure>
